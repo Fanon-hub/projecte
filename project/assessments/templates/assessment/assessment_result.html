@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Submit Result for "{{ assessment.title }}"</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="score">Your Score (out of {{ assessment.max_score }}):</label>
+    <input type="number" id="score" name="score" max="{{ assessment.max_score }}" required>
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'assessment_list' %}">Back to Assessments</a>
+{% endblock %}

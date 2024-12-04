@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My Payments</h1>
+<a href="{% url 'payment_create' %}">Add Payment</a>
+<ul>
+    {% for payment in payments %}
+        <li>
+            {{ payment.transaction_id }} - {{ payment.amount }} - {{ payment.status }}
+            <a href="{% url 'payment_detail' payment.pk %}">View</a>
+            <a href="{% url 'payment_update' payment.pk %}">Edit</a>
+            <a href="{% url 'payment_delete' payment.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

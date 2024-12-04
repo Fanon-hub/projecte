@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReSKILL Online Learning Platform</title>
+    <!-- Include CSS files or Bootstrap for styling (example) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Custom CSS file if needed -->
+</head>
+
+<body>
+    <!-- Navbar Section -->git init
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">ReSKILL</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'course_list' %}">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                    <!-- Display 'Edit Profile' and 'Log Out' links only if the user is authenticated -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Body Content Section -->
+    <div class="container mt-5">
+        {% block content %}
+        <!-- Dynamic content will be inserted here based on the current page -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 ReSKILL OLP. All rights reserved.</p>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript files (Optional, if you want to use Bootstrap JavaScript) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>{% block title %}ReSKILL - Learning Platform{% endblock %}</title>#}
+{#    <link rel="stylesheet" href="{% static 'css/styles.css' %}">#}
+{#</head>#}
+{#<body>#}
+{#    <header>#}
+{#        <nav>#}
+{#            <ul>#}
+{#                <li><a href="{% url 'home' %}">Home</a></li>#}
+{#                <li><a href="{% url 'courses' %}">Courses</a></li>#}
+{#                <li><a href="{% url 'about' %}">About</a></li>#}
+{#                <li><a href="{% url 'contact' %}">Contact</a></li>#}
+{#                Only show the Edit Profile link if the user is authenticated#}
+{#                {% if user.is_authenticated %}#}
+{#                <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>#}
+{#                {% endif %}#}
+{#            {% if user.is_authenticated %}#}
+{#            <li><a href="{% url 'logout' %}">Logout</a></li>#}
+{#            {% else %}#}
+{#            <li><a href="{% url 'login' %}">Login</a></li>#}
+{#            {% endif %}#}
+{#            </ul>#}
+{#        </nav>#}
+{#    </header>#}
+{##}
+{#    <main>#}
+{#        {% block content %}#}
+{#        <!-- Content will go here -->#}
+{#        {% endblock %}#}
+{#    </main>#}
+{##}
+{#    <footer>#}
+{#        <p>&copy; 2024 ReSKILL Learning Platform. All rights reserved.</p>#}
+{#    </footer>#}
+{#</body>#}
+{#</html>#}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ assessment.title }}</h1>
+<p>{{ assessment.description }}</p>
+<p>Course: {{ assessment.course }}</p>
+<p>Max Score: {{ assessment.max_score }}</p>
+<a href="{% url 'assessment_edit' assessment.id %}">Edit</a>
+<a href="{% url 'assessment_delete' assessment.id %}">Delete</a>
+<a href="{% url 'assessment_list' %}">Back to List</a>
+{% endblock %}

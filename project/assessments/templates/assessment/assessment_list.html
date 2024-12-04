@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Assessments</h1>
+<a href="{% url 'assessment_create' %}">Create New Assessment</a>
+<ul>
+    {% for assessment in assessments %}
+        <li>
+            <a href="{% url 'assessment_detail' assessment.id %}">{{ assessment.title }}</a>
+            <a href="{% url 'assessment_edit' assessment.id %}">Edit</a>
+            <a href="{% url 'assessment_delete' assessment.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

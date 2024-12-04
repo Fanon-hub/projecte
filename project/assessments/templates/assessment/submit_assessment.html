@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Submit Assessment: {{ assessment.title }}</h1>
+<p>{{ assessment.description }}</p>
+<form method="post">
+    {% csrf_token %}
+    {% for question in assessment.questions.all %}
+        <div>
+            <p><strong>{{ question.text }}</strong></p>
+            {% for option in question.options.all %}
+                <input type="radio" name="question_{{ question.id }}" value="{{ option.id }}" required>
+                <label>{{ option.text }}</label><br>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'assessment_list' %}">Back to Assessments</a>
+{% endblock %}

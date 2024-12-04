@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Available Courses</h2>
+<ul>
+    <li><a href="{% url 'course_detail' course.id %}">Introduction to Python</a></li>
+    <li><a href="{% url 'course_detail' course_id %}">Web Development with Django</a></li>
+    <li><a href="{% url 'course_detail' course_id %}">Data Science and Machine Learning</a></li>
+    <li><a href="{% url 'course_detail' course_id %}">Data Analysis</a></li>
+    <li><a href="{% url 'course_detail' course_id %}">Mobile Development</a></li>
+</ul>
+<p>For more details, click on any course title above.</p>
+{% endblock %}
